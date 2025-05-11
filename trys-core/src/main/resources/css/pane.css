@@ -1,8 +1,0 @@
-
-/* 容器分割线 - 底部 */
-.pane-border-b {
-    -fx-border-width: 0 0 1 0;
-    -fx-border-style: solid;
-    -fx-border-color: #ddd
-}
-
