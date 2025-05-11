@@ -12,10 +12,10 @@
     <modules>
         <module>trys-base</module>
         <module>trys-core</module>
-        <module>trys-config</module>
-        <module>trys-service</module>
-        <module>trys-stage</module>
-        <module>trys-main</module>
+<!--        <module>trys-config</module>-->
+<!--        <module>trys-service</module>-->
+<!--        <module>trys-stage</module>-->
+<!--        <module>trys-main</module>-->
     </modules>
     <groupId>com.app</groupId>
     <artifactId>trys</artifactId>
