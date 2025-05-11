@@ -1,7 +1,0 @@
-APP_TITLE: Trys Application
-
-#数据库配置
-MYSQL_SCHEMA: trys
-MYSQL_USER: root
-MYSQL_PASS: 134679852
-
