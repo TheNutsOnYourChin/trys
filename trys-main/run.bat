@@ -1,0 +1,1 @@
+java -jar ./target/trys-main-1.0.0-exec.jar
