@@ -1,0 +1,7 @@
+
+/* 危险按钮 */
+.danger-btn {
+    -fx-text-fill: white;
+    -fx-background-color: #F00
+}
+
