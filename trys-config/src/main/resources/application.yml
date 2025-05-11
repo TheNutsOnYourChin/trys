@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_SCHEMA:trys_dev}?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASS:123456}
+  profiles:
+    active: @profiles.active@
+
+resources:
+  path-images: /images
+  path-views: /views
+javafx:
+#  stage.style:
+  title: ${APP_TITLE:未知的环境}
+#  stage.width:G
+#  stage.height:
+#  stage.resizable:
+#  appicons:
+
+bus:
+  log-level: WARN
+

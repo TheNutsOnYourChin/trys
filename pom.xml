@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>trys-base</module>
+        <module>trys-core</module>
+        <module>trys-config</module>
+        <module>trys-service</module>
+        <module>trys-stage</module>
+        <module>trys-main</module>
+    </modules>
+    <groupId>com.app</groupId>
+    <artifactId>trys</artifactId>
+    <version>${trys.version}</version>
+    <name>trys</name>
+    <description>trys</description>
+
+    <properties>
+        <trys.version>1.0.0</trys.version>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>
+        <javaFx.version>17.0.6</javaFx.version>
+        <maven.test.skip>true</maven.test.skip><!-- 不编译test-->
+<!--        <skipTests>true</skipTests>--><!-- 编译但不执行test-->
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>2.2.5.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+                <version>2.2.5.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+                <version>5.2.7.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>de.roskenet</groupId>
+                <artifactId>springboot-javafx-support</artifactId>
+                <version>2.1.6</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.13</version>
+                <scope>runtime</scope>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.kordamp.bootstrapfx</groupId>-->
+<!--                <artifactId>bootstrapfx-core</artifactId>-->
+<!--                <version>0.4.0</version>-->
+<!--            </dependency>-->
+            <dependency>
+                <groupId>com.app</groupId>
+                <artifactId>trys-base</artifactId>
+                <version>${trys.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.app</groupId>
+                <artifactId>trys-config</artifactId>
+                <version>${trys.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.app</groupId>
+                <artifactId>trys-core</artifactId>
+                <version>${trys.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.app</groupId>
+                <artifactId>trys-main</artifactId>
+                <version>${trys.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.app</groupId>
+                <artifactId>trys-service</artifactId>
+                <version>${trys.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.app</groupId>
+                <artifactId>trys-stage</artifactId>
+                <version>${trys.version}</version>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.app</groupId>-->
+<!--                <artifactId>trys-assembly</artifactId>-->
+<!--                <version>${trys.version}</version>-->
+<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>com.github.pagehelper</groupId>-->
+            <!--                <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+            <!--                <version>1.3.0</version>-->
+            <!--            </dependency>-->
+            <!-- 支持mysql json类型转换的依赖 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.11.1</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.controlsfx/controlsfx -->
+            <dependency>
+                <groupId>org.controlsfx</groupId>
+                <artifactId>controlsfx</artifactId>
+                <version>11.1.1</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>2.0.12</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- javafx jdk start  -->
+        <dependency>
+            <groupId>javafx-swt</groupId>
+            <artifactId>javafx.base</artifactId>
+            <version>${javaFx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javafx-swt</groupId>
+            <artifactId>javafx.controls</artifactId>
+            <version>${javaFx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javafx-swt</groupId>
+            <artifactId>javafx.fxml</artifactId>
+            <version>${javaFx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javafx-swt</groupId>
+            <artifactId>javafx.graphics</artifactId>
+            <version>${javaFx.version}</version>
+<!--            <classifier>win</classifier>-->
+        </dependency>
+        <dependency>
+            <groupId>javafx-swt</groupId>
+            <artifactId>javafx.media</artifactId>
+            <version>${javaFx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javafx-swt</groupId>
+            <artifactId>javafx.swing</artifactId>
+            <version>${javaFx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javafx-swt</groupId>
+            <artifactId>javafx.web</artifactId>
+            <version>${javaFx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javafx-swt</groupId>
+            <artifactId>javafx.swt</artifactId>
+            <version>${javaFx.version}</version>
+        </dependency>
+
+        <!-- javafx jdk end  -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
+
+        <!--        <dependency>-->
+        <!--            <groupId>com.github.pagehelper</groupId>-->
+        <!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+        <!--            <exclusions>-->
+        <!--                <exclusion>-->
+        <!--                    <artifactId>jsqlparser</artifactId>-->
+        <!--                    <groupId>com.github.jsqlparser</groupId>-->
+        <!--                </exclusion>-->
+        <!--            </exclusions>-->
+        <!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.controlsfx</groupId>-->
+        <!--            <artifactId>controlsfx</artifactId>-->
+        <!--        </dependency>-->
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <configuration>
+                </configuration>
+                <executions>
+                    <!-- enable flattening -->
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <!-- ensure proper cleanup -->
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- 方式1 spring插件连同依赖一起打包成一个可执行jar，配置最少，占用资源较大 -->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <fork>true</fork>-->
+<!--                    <classifier>exec</classifier>-->
+<!--                    <mainClass>com.app.trys.Starter</mainClass>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>repackage</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+
+            <!--
+                方式2 spring 插件 + maven jar + dependency + resources， 占用资源小
+                这部分的打包，我把并没有把资源文件分离，只是把依赖的jar分离出去了
+                如果是首次打包或依赖发生改变，你最好全量更新你的lib：
+                    把 maven-dependency-plugin 插件的
+                        <goal>copy</goal> 替换为 <goal>copy-dependencies</goal>
+                        移除 <artifactItems>
+                    clean package， 在启动类所在模块得到 lib 目录，以及启动类的jar(不需要exec后缀的包)，拷贝到你的软件根目录下即可。
+                    此时，在启动类所在的target目录下使用java11就能直接把应用跑起来，可以把main.jar + lib直接作为成品了。
+                如果依赖未改变，那么只更新模块依赖即可：
+                    把 maven-dependency-plugin 插件的
+                        <goal>标签改为 <goal>copy</goal>
+                        <artifactItems> 标签加入你的模块依赖
+                    clean package，在启动类所在模块得到你的 lib 目录，里面只有你的项目的模块依赖(只是帮你复制到一块，实际上你也可以从各个模块手动收集)，
+                    拿上这些以及启动类的jar(不需要exec后缀的包)，在你的根目录替换旧包即可。
+
+                有一个比较麻烦的问题，如果需要 install 子模块，你可能需要注释掉maven-dependency-plugin插件，
+                它很笨，只会拷贝仓库里的包，如果没有install过，则会出现找不到模块依赖的异常
+                如果仓库存在，它也只是复制过来，所以它不会为你同步当前代码，你仓库里的子模块依赖并没有更新。
+                所以，你需要注释这个maven-dependency-plugin插件，install之后，再让它为你收集这些依赖。
+
+                顺带一提，win11替换文件的时候，一定要先删除原文件，直接替换的话，系统可能会判定为同一个文件从而导致没有替换
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <!--不打包的资源文件 当排除了yml文件，指定 profiles 将失效，-->
+                    <excludes>
+<!--                        <exclude>*.**</exclude>-->
+<!--                        <exclude>*/*.xml</exclude>-->
+                    </excludes>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <!--MANIFEST.MF 中 Class-Path 加入前缀，因为dependency插件的依赖目录设置成了lib-->
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <!--jar包不包含唯一版本标识-->
+                            <useUniqueVersions>false</useUniqueVersions>
+                            <!--指定入口类-->
+                            <mainClass>com.app.trys.Starter</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <!--MANIFEST.MF 中 Class-Path 加入资源文件目录-->
+<!--                            <Class-Path>./resources/</Class-Path>-->
+                        </manifestEntries>
+                    </archive>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                </configuration>
+            </plugin>
+
+            <!-- 拷贝依赖 这个插件能够将依赖、模块依赖分离出来，通常会放在lib等目录-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+<!--                            <goal>copy-dependencies</goal>-->
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.app</groupId>
+                                    <artifactId>trys-base</artifactId>
+                                    <version>${trys.version}</version>
+                                    <!-- 指定该依赖的 jar 路径 -->
+<!--                                    <outputDirectory>${project.build.directory}/lib</outputDirectory>-->
+                                </artifactItem>
+<!--                                <artifactItem>-->
+<!--                                    <groupId>com.app</groupId>-->
+<!--                                    <artifactId>trys-config</artifactId>-->
+<!--                                    <version>${trys.version}</version>-->
+<!--                                </artifactItem>-->
+                                <artifactItem>
+                                    <groupId>com.app</groupId>
+                                    <artifactId>trys-core</artifactId>
+                                    <version>${trys.version}</version>
+                                </artifactItem>
+<!--                                <artifactItem>-->
+<!--                                    <groupId>com.app</groupId>-->
+<!--                                    <artifactId>trys-main</artifactId>-->
+<!--                                    <version>${trys.version}</version>-->
+<!--                                </artifactItem>-->
+<!--                                <artifactItem>-->
+<!--                                    <groupId>com.app</groupId>-->
+<!--                                    <artifactId>trys-service</artifactId>-->
+<!--                                    <version>${trys.version}</version>-->
+<!--                                </artifactItem>-->
+<!--                                <artifactItem>-->
+<!--                                    <groupId>com.app</groupId>-->
+<!--                                    <artifactId>trys-stage</artifactId>-->
+<!--                                    <version>${trys.version}</version>-->
+<!--                                </artifactItem>-->
+                            </artifactItems>
+                            <!-- 统一指定 jar 包路径-->
+                            <outputDirectory>${project.build.directory}/lib/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--拷贝资源文件 copy-resources-->
+<!--            <plugin>-->
+<!--                <artifactId>maven-resources-plugin</artifactId>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>copy-resources</id>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>copy-resources</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <resources>-->
+<!--                                <resource>-->
+<!--                                    <directory>src/main/resources</directory>-->
+<!--                                </resource>-->
+<!--                            </resources>-->
+<!--                            <outputDirectory>${project.build.directory}/resources</outputDirectory>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+
+            <!--spring boot repackage，依赖 maven-jar-plugin 打包的jar包 重新打包成 spring boot 的jar包-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+
+                    <classifier>exec</classifier>
+                    <!--重写包含依赖，包含不存在的依赖，jar里没有pom里的依赖-->
+                    <includes>
+                        <include>
+                            <groupId>null</groupId>
+                            <artifactId>null</artifactId>
+                        </include>
+                    </includes>
+                    <layout>ZIP</layout>
+                    <!--使用外部配置文件，jar包里没有资源文件-->
+                    <addResources>true</addResources>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <!--配置jar包特殊标识 配置后，保留原文件，生成新文件 *-run.jar -->
+                            <!--配置jar包特殊标识 不配置，原文件命名为 *.jar.original，生成新文件 *.jar -->
+                            <!--<classifier>run</classifier>-->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

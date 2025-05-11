@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.app.trys.controller.LoginController">
+   <children>
+       <AnchorPane prefHeight="330.0" prefWidth="430.0" style="-fx-background-color: white;">
+           <children>
+               <Label layoutX="99.0" layoutY="183.0" text="账 号：">
+                   <font>
+                       <Font size="14.0" />
+                   </font>
+               </Label>
+               <Label layoutX="99.0" layoutY="217.0" text="密 码：">
+                   <font>
+                       <Font size="14.0" />
+                   </font>
+               </Label>
+               <Button fx:id="loginButton" layoutX="97.0" layoutY="270.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="236.0" style="-fx-background-color: #1EC6FC;" text="登  录" textAlignment="CENTER" textFill="WHITE" onAction="#onClick">
+                   <font>
+                       <Font size="14.0" />
+                   </font>
+               </Button>
+               <CheckBox layoutX="98.0" layoutY="243.0" mnemonicParsing="false" text="自动登录" textFill="#a6a6a6" />
+               <CheckBox layoutX="188.0" layoutY="243.0" mnemonicParsing="false" text="记住密码" textFill="#a6a6a6" />
+               <Label layoutX="277.0" layoutY="242.0" text="找回密码" textFill="#a6a6a6">
+                   <font>
+                       <Font size="14.0" />
+                   </font>
+               </Label>
+               <TextField fx:id="account" layoutX="146.0" layoutY="183.0" onAction="#onInputAccount" prefHeight="23.0" prefWidth="182.0" />
+               <PasswordField fx:id="pw" layoutX="146.0" layoutY="216.0" onAction="#onInputPw" prefHeight="23.0" prefWidth="182.0" />
+           </children>
+       </AnchorPane>
+   </children>
+</VBox>
